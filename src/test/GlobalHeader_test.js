@@ -60,7 +60,7 @@ describe('Global Header', () => {
     });
 
     it('renders empty profile name', () => {
-      expect(globalHeader.find('.profile a').text()).toBe('');
+      expect(globalHeader.find('.profile').text()).toBe('');
     });
   });
 
@@ -131,7 +131,7 @@ describe('Global Header', () => {
     });
 
     it('renders empty profile name with callback', () => {
-      expect(globalHeaderWithProps.find('.profile a').text()).toBe(
+      expect(globalHeaderWithProps.find('.profile').text()).toBe(
         input.profileName
       );
     });

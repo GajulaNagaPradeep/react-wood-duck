@@ -37,7 +37,8 @@ header {
       box-shadow: none;
       border-color: transparent;
       text-decoration: none;
-      outline: none;
+      padding: 0.40rem 0.40rem 0.40rem 0.40rem;
+      outline: $light-blue 2px solid;
     }
   }
   .btn-link {
@@ -75,11 +76,11 @@ header {
       padding: 0.40rem 0.25rem 0.25rem 0.15rem;
       text-align: center;
       cursor: pointer;
-      a:focus, a:hover, a:active {
+  > a:focus, > a:hover, > a:active {
         background-color: transparent;
         box-shadow: none;
         border-color: transparent;
-        outline: none;
+        padding: 0.40rem 0.10rem 0.25rem 0.15rem;
   }
     }
   }
@@ -103,8 +104,9 @@ header {
       color: $black;
       cursor: pointer;
       text-outline: none;
+      outline: none;
     }
-    :hover {
+    :hover, :focus {
       background-color: #d8ecf0
     }
   }

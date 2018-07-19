@@ -57,10 +57,7 @@ class GlobalHeader extends React.Component {
                     profileId={profileId}
                   />
                   <li>
-                    <p className="profile">
-                      {' '}
-                      <a href="#/">{profileName}</a>
-                    </p>
+                    <p className="profile">{profileName}</p>
                   </li>
                   <li>
                     <ProfileAvatar

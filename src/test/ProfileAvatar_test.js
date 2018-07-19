@@ -55,6 +55,15 @@ describe('ProfileAvatar', () => {
       );
     });
 
+    it('clicking on profile avatar focuses logout button', () => {
+      profileAvatar.setState({ isHidden: true });
+      profileAvatar
+        .find('a')
+        .first()
+        .simulate('click');
+      expect(profileAvatar.state().dropdownFocused).toBe(true);
+    });
+
     describe('when the menu is not moused over', () => {
       it('blurs the avatar hides the logout button', () => {
         profileAvatar.setState({ isHidden: false, dropdownFocused: false });
@@ -101,6 +110,7 @@ describe('ProfileAvatar', () => {
             .at(1)
             .simulate('blur');
           expect(profileAvatar.state().dropdownFocused).toBe(false);
+          expect(profileAvatar.state().isHidden).toBe(true);
         });
       });
     });
@@ -125,7 +135,7 @@ describe('ProfileAvatar', () => {
         expect(profileAvatar.html()).not.toContain('logout');
       });
 
-      it('closes the dropdown menu and sets dropdownFocused to false', () => {
+      it('closes the dropdown menu and sets dropdownFocused to true', () => {
         profileAvatar.setProps({ logoutCallback: spyCallback });
         profileAvatar.setState({ isHidden: false, dropdownFocused: true });
         profileAvatar
@@ -133,7 +143,8 @@ describe('ProfileAvatar', () => {
           .at(1)
           .simulate('click', { preventDefault: () => {} });
         expect(profileAvatar.html()).not.toContain('Logout');
-        expect(profileAvatar.state().dropdownFocused).toBe(false);
+        expect(profileAvatar.state().dropdownFocused).toBe(true);
+        expect(profileAvatar.state().isHidden).toBe(true);
       });
     });
   });
