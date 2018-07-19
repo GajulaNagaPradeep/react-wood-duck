@@ -16,6 +16,7 @@ class ProfileAvatar extends React.Component {
   _handleChange() {
     this.setState({
       isHidden: !this.state.isHidden,
+      dropdownFocused: this.state.isHidden,
     });
   }
 
@@ -28,20 +29,32 @@ class ProfileAvatar extends React.Component {
     }
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.anchorRef && prevState.isHidden && !this.state.isHidden) {
+      this.anchorRef.focus();
+    }
+  }
+
   _renderToggle() {
     return (
       <ul className="c_dropdown">
         <li>
           <a
+            ref={a => (this.anchorRef = a)}
             href="#/"
             onMouseOver={() => this.setState({ dropdownFocused: true })}
             onFocus={() => this.setState({ dropdownFocused: true })}
             onMouseOut={() => this.setState({ dropdownFocused: false })}
-            onBlur={() => this.setState({ dropdownFocused: false })}
+            onBlur={() =>
+              this.setState({ dropdownFocused: false, isHidden: true })
+            }
             onClick={event => {
               event.preventDefault();
               this.props.logoutCallback(this.props.profileId, event);
-              this.setState({ dropdownFocused: false, isHidden: true });
+              this.setState({
+                dropdownFocused: true,
+                isHidden: !this.state.isHidden,
+              });
             }}
           >
             Logout
