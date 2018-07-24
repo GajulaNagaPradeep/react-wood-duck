@@ -16,7 +16,8 @@ header {
       opacity: 1;
     }
   }
-  a, .btn.btn-link {
+
+  a, button, .btn.btn-link {
     color: $white;
     opacity: 0.87;
 
@@ -53,7 +54,7 @@ header {
     }
     .fa {
       color: $white;
-      padding: 0 $small-spacing;
+      padding: none;
     }
     .profile {
       margin: 0;
@@ -76,7 +77,12 @@ header {
       padding: 0.40rem 0.25rem 0.25rem 0.15rem;
       text-align: center;
       cursor: pointer;
-  > a:focus, > a:hover, > a:active {
+      button {
+      background-color: transparent;
+      box-shadow: none;
+      border-color: transparent;
+    }
+  > button:focus, > button:hover, > button:active {
         background-color: transparent;
         box-shadow: none;
         border-color: transparent;

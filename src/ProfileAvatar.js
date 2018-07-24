@@ -69,14 +69,14 @@ class ProfileAvatar extends React.Component {
     if (!profileId && !logoutCallback) return null;
     return (
       <div className="profile-avatar">
-        <a
-          href="#/"
+        <button
+          type="button"
           onClick={this._handleChange}
           tabIndex="0"
           onBlur={this._handleBlur}
         >
           {profileAvatar}
-        </a>
+        </button>
         {logoutCallback && !this.state.isHidden && this._renderToggle()}
       </div>
     );
