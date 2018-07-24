@@ -38,7 +38,7 @@ describe('ProfileAvatar', () => {
     });
 
     it('clicking on profile avatar renders logout button', () => {
-      profileAvatar.find('a').simulate('click');
+      profileAvatar.find('button').simulate('click');
       expect(profileAvatar.findWhere(n => n.text() === 'Logout').exists()).toBe(
         true
       );
@@ -47,7 +47,7 @@ describe('ProfileAvatar', () => {
     it('clicking on profile avatar hides visible logout button', () => {
       profileAvatar.setState({ isHidden: false });
       profileAvatar
-        .find('a')
+        .find('button')
         .first()
         .simulate('click');
       expect(profileAvatar.findWhere(n => n.text() === 'Logout').exists()).toBe(
@@ -58,7 +58,7 @@ describe('ProfileAvatar', () => {
     it('clicking on profile avatar focuses logout button', () => {
       profileAvatar.setState({ isHidden: true });
       profileAvatar
-        .find('a')
+        .find('button')
         .first()
         .simulate('click');
       expect(profileAvatar.state().dropdownFocused).toBe(true);
@@ -68,7 +68,7 @@ describe('ProfileAvatar', () => {
       it('blurs the avatar hides the logout button', () => {
         profileAvatar.setState({ isHidden: false, dropdownFocused: false });
         profileAvatar
-          .find('a')
+          .find('button')
           .first()
           .simulate('blur', { preventDefault: () => {} });
         expect(
@@ -82,7 +82,7 @@ describe('ProfileAvatar', () => {
           profileAvatar.setState({ isHidden: false, dropdownFocused: false });
           profileAvatar
             .find('a')
-            .at(1)
+            .first()
             .simulate('focus');
           expect(profileAvatar.state().dropdownFocused).toBe(true);
         });
@@ -93,7 +93,7 @@ describe('ProfileAvatar', () => {
       it('blurs the avatar does not hide the logout button', () => {
         profileAvatar.setState({ isHidden: false, dropdownFocused: true });
         profileAvatar
-          .find('a')
+          .find('button')
           .first()
           .simulate('blur', { preventDefault: () => {} });
         expect(
@@ -107,7 +107,7 @@ describe('ProfileAvatar', () => {
           profileAvatar.setState({ isHidden: false, dropdownFocused: true });
           profileAvatar
             .find('a')
-            .at(1)
+            .first()
             .simulate('blur');
           expect(profileAvatar.state().dropdownFocused).toBe(false);
           expect(profileAvatar.state().isHidden).toBe(true);
@@ -121,15 +121,15 @@ describe('ProfileAvatar', () => {
         profileAvatar.setState({ isHidden: false });
         profileAvatar
           .find('a')
-          .at(1)
+          .first()
           .simulate('mouseover');
         profileAvatar
-          .find('a')
+          .find('button')
           .first()
           .simulate('blur', { preventDefault: () => {} });
         profileAvatar
           .find('a')
-          .at(1)
+          .first()
           .simulate('click', { preventDefault: () => {} });
         expect(spyCallback).toHaveBeenCalled();
         expect(profileAvatar.html()).not.toContain('logout');
@@ -140,7 +140,7 @@ describe('ProfileAvatar', () => {
         profileAvatar.setState({ isHidden: false, dropdownFocused: true });
         profileAvatar
           .find('a')
-          .at(1)
+          .first()
           .simulate('click', { preventDefault: () => {} });
         expect(profileAvatar.html()).not.toContain('Logout');
         expect(profileAvatar.state().dropdownFocused).toBe(true);
