@@ -70,6 +70,7 @@ class ProfileAvatar extends React.Component {
     return (
       <div className="profile-avatar">
         <button
+          aria-label="Profile Avatar Menu"
           type="button"
           onClick={this._handleChange}
           tabIndex="0"
