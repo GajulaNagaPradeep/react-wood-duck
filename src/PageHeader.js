@@ -36,9 +36,7 @@ class PageHeader extends Component {
           <div className="container">
             <div className="row">
               <div className="col-xs-7">
-                <div className="page-title text-left">
-                  {this.props.pageTitle}
-                </div>
+                <h1 className="page-title text-left">{this.props.pageTitle}</h1>
               </div>
               <div className="col-xs-5">{this.props.button}</div>
             </div>

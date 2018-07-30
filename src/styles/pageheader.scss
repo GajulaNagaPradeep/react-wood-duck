@@ -49,7 +49,10 @@
 .page-title {
   color: $white;
   font-size: $h2-card-header-font-size;
+  font-weight: normal;
+  line-height: 1.428;
   height: (5rem / $mast-height) * 100%;
+  margin: 0;
   padding-bottom: $extra-small-spacing;
   padding-top: $extra-small-spacing;
 }

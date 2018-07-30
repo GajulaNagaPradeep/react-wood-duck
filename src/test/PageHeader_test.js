@@ -25,13 +25,14 @@ describe('<PageHeader />', () => {
   });
 
   it('finds element with tag', () => {
-    expect(pageHeader.find('div').length).toEqual(7);
+    expect(pageHeader.find('div').length).toEqual(6);
+    expect(pageHeader.find('h1').length).toEqual(1);
     expect(pageHeaderwithProps.find('button').length).toEqual(1);
   });
 
   it('finds element with class and default props', () => {
     expect(pageHeader.find('.row').length).toEqual(1);
-    expect(pageHeader.find('.page-title').props().className).toBe(
+    expect(pageHeader.find('h1.page-title').props().className).toBe(
       'page-title text-left'
     );
   });
