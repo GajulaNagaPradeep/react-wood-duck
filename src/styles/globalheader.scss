@@ -74,19 +74,20 @@ header {
       background-color: $teel-blue;
       color: $white;
       flex: 0 0 15%;
-      padding: 0.40rem 0.25rem 0.25rem 0.15rem;
       text-align: center;
       cursor: pointer;
       > button {
         background-color: transparent;
         box-shadow: none;
-        border-color: transparent;
-        padding: 0 0.65rem;
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        border: 0;
       }
       > button:focus, > button:hover, > button:active {
         background-color: transparent;
         box-shadow: none;
-        border-color: transparent;
       }
     }
   }

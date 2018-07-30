@@ -42,10 +42,16 @@ const colorsList = colors.map((color, i) => (
       <code>${color[0]}</code>
     </td>
     <td>
-      <code>.c-{color[0]}</code>
+      <code>
+        .c-
+        {color[0]}
+      </code>
     </td>
     <td>
-      <code>.bg-{color[0]}</code>
+      <code>
+        .bg-
+        {color[0]}
+      </code>
     </td>
     <td>
       <code>{color[1]}</code>
