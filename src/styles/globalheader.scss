@@ -112,6 +112,7 @@ header {
       cursor: pointer;
       text-outline: none;
       outline: none;
+      z-index: 5;
     }
     :hover, :focus {
       background-color: #d8ecf0
