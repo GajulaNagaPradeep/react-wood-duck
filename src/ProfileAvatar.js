@@ -45,6 +45,7 @@ class ProfileAvatar extends React.Component {
             onMouseOver={() => this.setState({ dropdownFocused: true })}
             onFocus={() => this.setState({ dropdownFocused: true })}
             onMouseOut={() => this.setState({ dropdownFocused: false })}
+            onMouseDown={e => e.preventDefault()}
             onBlur={() =>
               this.setState({ dropdownFocused: false, isHidden: true })
             }
