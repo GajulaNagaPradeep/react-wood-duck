@@ -24,7 +24,7 @@ class GlobalHeader extends React.Component {
       <header role="banner">
         <div className="container">
           <nav className="row">
-            <div className="col-xs-12 col-sm-1">
+            <div className="col-xs-1 col-sm-1">
               <div className="logo">
                 <button
                   className="btn btn-link"
@@ -35,7 +35,7 @@ class GlobalHeader extends React.Component {
                 </button>
               </div>
             </div>
-            <div className="col-xs-12 col-sm-11">
+            <div className="col-xs-11 col-sm-11">
               <div className="pull-right">
                 <ul className="header-actions">
                   <GlobalHeaderAction
