@@ -215,3 +215,8 @@ yarn run storybook
 View your storybook browser http://localhost:6006/
 
 Access storybook here for [react-wood-duck](https://ca-cwds.github.io/react-wood-duck/)
+
+
+# Questions
+
+If you have any questions regarding the contents of this repository, please email the Office of Systems Integration at FOSS@osi.ca.gov.
