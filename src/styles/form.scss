@@ -55,7 +55,7 @@ textarea {
 }
 
 select {
-  background-image: url('https://ca-cwds.github.io/research-design/images/arrow-down.svg') !important;
+  background-image: url('../../src/images/arrow-down.svg') !important;
   background-position: right 1.3rem center;
   background-repeat: no-repeat;
   background-size: 1.3rem;
@@ -142,7 +142,7 @@ legend {
 }
 
 [type='checkbox']:checked + span:before {
-  background-image: url(https://ca-cwds.github.io/research-design/images/correct8.svg);
+  background-image: url('../../src/images/correct8.svg');
   background-position: 50%;
   background-repeat: no-repeat;
 }
